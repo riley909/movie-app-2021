@@ -18,16 +18,16 @@ function Movie(props) {
         <div className='movie__data'>
           <h3 className='movie__title'>{props.title}</h3>
           <h5 className='movie__year'>{props.year}</h5>
-          <ul className='genre'>
+          <div className='genre'>
             {props.genres.map((genre, idx) => {
               return (
-                <li key={idx} className='genre__genre'>
+                <div key={idx} className='genre__genre'>
                   {genre}
-                </li>
+                </div>
               );
             })}
-          </ul>
-          <p className='movie__summary'>{props.summary.slice(0, 140)}...</p>
+          </div>
+          <p className='movie__summary'>{props.summary.slice(0, 120)}...</p>
         </div>
       </div>
     </Link>
