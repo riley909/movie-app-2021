@@ -32,4 +32,22 @@ router.post('/register', async (req, res) => {
   });
 });
 
+router.post('/login', (req, res) => {
+  User.findOne({
+    where: {
+      email: req.body.email,
+      password: req.body.password,
+    },
+  }).then((result) => {
+    if (!result) {
+      return res.json({
+        loginSuccess: false,
+        message: `로그인 실패`,
+      });
+    }
+  });
+});
+
+router.get('/logout', (req, res) => {});
+
 module.exports = router;

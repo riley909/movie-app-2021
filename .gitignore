@@ -24,6 +24,7 @@ yarn-error.log*
 
 # config
 .env
+server/config/config.json
 
 # key
 server/cert.pem
